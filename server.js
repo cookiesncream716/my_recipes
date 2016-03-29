@@ -6,10 +6,10 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-require('./server/config/mongoose.js');
-require('./server/config/routes.js')(app);
+require('./app/config/mongoose.js');
+require('./app/config/routes.js')(app);
 
-app.use(express.static(path.join(__dirname, './client')));
+app.use(express.static(path.join(__dirname, './public')));
 
 app.listen(8000, function(){
 	console.log('Listening for recipes on 8000');

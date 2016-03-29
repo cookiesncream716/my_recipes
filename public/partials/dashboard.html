@@ -1,2 +1,8 @@
-<div ng-controller ='dashboardController'>
+<div ng-controller='dashboardController'>
+	<h3>The Recipe Boxes</h3>
+	<input ng-model='filter_boxes' placeholder='filter'>
+	<div ng-repeat="box in boxes | filter: filter_boxes | orderBy:'box'">
+		<h4 ng-click='showBox(box._id)'>{{ box.title }}</h4>
+	</div>
+	<button ng-click='addBox()' class='btn'>Create My Own Recipe Box</button>
 </div>

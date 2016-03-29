@@ -1,27 +1,27 @@
-angular.module('appRoutes', []).config(['$routeProvider', function($routeProvider){
+recipeBox.config(['$routeProvider', function($routeProvider){
 	$routeProvider
 		.when('/', {
 			templateUrl: 'partials/title.html',
-			controller: 'titleController'
+			// controller: 'titleController'
 		})
 		.when('/dashboard', {
 			templateUrl: 'partials/dashboard.html',
-			controller: 'dashboardController'
+			// controller: 'dashboardController'
 		})
 		.when('/create', {
 			templateUrl: 'partials/create.html',
-			controller: 'createController'
+			// controller: 'createController'
 		})
 		.when('/show/:id', {
 			templateUrl: '/partials/show.html',
-			controller: 'showController'
-		}
+			// controller: 'showController'
+		})
 		.when('/update/:id', {
 			templateUrl: '/partials/update.html',
-			controller: 'updateController'
+			// controller: 'updateController'
 		})
 		.otherwise({
 			templateUrl: 'partials.title.html',
-			controller: 'titleController'
+			// controller: 'titleController'
 		})
 }]);
