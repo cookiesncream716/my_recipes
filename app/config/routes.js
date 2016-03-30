@@ -9,4 +9,10 @@ module.exports = function(app){
 	app.get('/cookbook', function(req, res){
 		cookbooks.index(req, res)
 	});
+	app.post('/cookbook/:id', function(req, res){
+		cookbooks.show(req, res)
+	});
+	app.post('/recipe', function(req, res){
+		recipes.create(req, res)
+	})
 }

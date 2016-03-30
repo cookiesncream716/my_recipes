@@ -1,3 +1,38 @@
 <div ng-controller ='showController'>
 	<h1>show</h1>
+	<h1>{{ box.title }}</h1>
+	<h3>Bread</h3>
+	<div ng-repeat='recipe in box.recipes'>
+		<p ng-if='recipe.category=="Bread"' ng-click='seeRecipe(recipe.url)'>{{recipe.name}}<p>
+	</div>
+	<h3>Beverage</h3>
+	<div ng-repeat='recipe in box.recipes'>
+		<p ng-if='recipe.category=="Beverage"'>{{recipe.name}}</p>
+	</div>
+	<h3>Dessert</h3>
+	<div ng-repeat='recipe in box.recipes'>
+		<p ng-if='recipe.category=="Dessert"'>{{recipe.name}}</p>	
+	</div>
+	<h3>Main Dish</h3>
+	<div ng-repeat='recipe in box.recipes'>
+		<p ng-if='recipe.category=="Main Dish"'>{{recipe.name}}</p>	
+	</div>
+	<h3>Salad</h3>
+	<div ng-repeat='recipe in box.recipes'>
+		<p ng-if='recipe.category=="Salad"'>{{recipe.name}}</p>	
+	</div>
+	<h3>Side Dish</h3>
+	<div ng-repeat='recipe in box.recipes'>
+		<p ng-if='recipe.category=="Side Dish"'>{{recipe.name}}</p>	
+	</div>
+	<h3>Soup</h3>
+	<div ng-repeat='recipe in box.recipes'>
+		<p ng-if='recipe.category=="Soup"'>{{recipe.name}}</p>	
+	</div>
+	<h3>Other</h3>
+	<div ng-repeat='recipe in box.recipes'>
+		<p ng-if='recipe.category=="Other"'>{{recipe.name}}</p>	
+	</div>
+	<button ng-click='addRecipe()' class='btn'>Add Recipes</button>
+	
 </div>

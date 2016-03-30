@@ -1,2 +1,31 @@
 <div ng-controller ='updateController'>
+	<h1>update</h1>
+	<h3>{{ box.title }}</h3>
+	<form role='form'>
+		<div class='form-group'>
+			<label for='name'>Recipe Name:</label>
+			<input type='text' ng-model='addRecipe.name'>
+		</div>
+		<div class='form-group'>
+			<label for='url'>Url for Recipe</label>
+			<input type='text' ng-model='addRecipe.url'>
+		</div>
+		<div class='form-group'>
+			<label for='category'>Recipe Category</label>
+			<select ng-model='addRecipe.category'>
+				<option value='Bread'>Bread</option>
+				<option value='Beverage'>Beverage</option>
+				<option value='Dessert'>Dessert</option>
+				<option value='Main Dish'>Main Dish</option>
+				<option value='Salad'>Salad</option>
+				<option value='Side Dish'>Side Dish</option>
+				<option value='Soup'>Soup</option>
+				<option value='Other'>Other</option>
+			</select>
+		</div>
+		<input type='hidden' ng-value='addRecipe.cookbook_id = box._id'>
+		<button ng-click='createRecipe()' class='btn'>Add Recipe</button>
+	</form>
+	<a href='#/show/{{ box._id }}'>Return to {{ box.title }}</a>
+	<h4>{{ errors }}</h4>
 </div>

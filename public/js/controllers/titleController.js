@@ -1,3 +1,3 @@
-angular.module('titleController', []).controller('titleController', function($scope){
+recipeBox.controller('titleController', function($scope){
 
 })

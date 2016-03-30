@@ -1,4 +1,4 @@
-angular.module('createController', []).controller('createController', function($scope, cookbookFactory, $location){
+recipeBox.controller('createController', function($scope, cookbookFactory, $location){
 	$scope.createBox = function(){
 		// console.log($scope.newBox)
 		cookbookFactory.create($scope.newBox, function(output){
