@@ -10,6 +10,7 @@ require('./app/config/mongoose.js');
 require('./app/config/routes.js')(app);
 
 app.use(express.static(path.join(__dirname, './public')));
+// for css
 
 app.listen(8000, function(){
 	console.log('Listening for recipes on 8000');

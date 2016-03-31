@@ -7,7 +7,4 @@ recipeBox.controller('showController', function($scope, $routeParams, $location,
 	$scope.addRecipe = function(){
 		$location.path('/update/' + box_id);
 	}
-	$scope.seeRecipe = function(url){
-		console.log(url)
-	}
 })

@@ -1,4 +1,5 @@
-<div ng-controller='dashboardController'>
+<div ng-controller='dashboardController' id='dashboard'>
+	<h2 id='title_dashboard'>myRecipe Box    <img src='/static/green_box.png' id='d_recipe_card'></h2>
 	<h3>The Recipe Boxes</h3>
 	<input ng-model='filter_boxes' placeholder='filter'>
 	<div ng-repeat="box in boxes | filter: filter_boxes | orderBy:'box'">

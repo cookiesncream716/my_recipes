@@ -1,38 +1,37 @@
 <div ng-controller ='showController'>
 	<h1>show</h1>
+	<a href='#/dashboard'>Return to Dashboard</a> | <a  ng-click='addRecipe()'>Add Recipe</a>
 	<h1>{{ box.title }}</h1>
 	<h3>Bread</h3>
 	<div ng-repeat='recipe in box.recipes'>
-		<p ng-if='recipe.category=="Bread"' ng-click='seeRecipe(recipe.url)'>{{recipe.name}}<p>
+		<a ng-if='recipe.category=="Bread"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Bread"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>
 	</div>
 	<h3>Beverage</h3>
 	<div ng-repeat='recipe in box.recipes'>
-		<p ng-if='recipe.category=="Beverage"'>{{recipe.name}}</p>
+		<a ng-if='recipe.category=="Beverage"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Beverage"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>
 	</div>
 	<h3>Dessert</h3>
 	<div ng-repeat='recipe in box.recipes'>
-		<p ng-if='recipe.category=="Dessert"'>{{recipe.name}}</p>	
+		<a ng-if='recipe.category=="Dessert"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Dessert"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
 	</div>
 	<h3>Main Dish</h3>
 	<div ng-repeat='recipe in box.recipes'>
-		<p ng-if='recipe.category=="Main Dish"'>{{recipe.name}}</p>	
+		<a ng-if='recipe.category=="Main Dish"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Main Dish"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
 	</div>
 	<h3>Salad</h3>
 	<div ng-repeat='recipe in box.recipes'>
-		<p ng-if='recipe.category=="Salad"'>{{recipe.name}}</p>	
+		<a ng-if='recipe.category=="Salad"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Salad"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
 	</div>
 	<h3>Side Dish</h3>
 	<div ng-repeat='recipe in box.recipes'>
-		<p ng-if='recipe.category=="Side Dish"'>{{recipe.name}}</p>	
+		<a ng-if='recipe.category=="Side Dish"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Side Dish"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
 	</div>
 	<h3>Soup</h3>
 	<div ng-repeat='recipe in box.recipes'>
-		<p ng-if='recipe.category=="Soup"'>{{recipe.name}}</p>	
+		<a ng-if='recipe.category=="Soup"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Soup"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
 	</div>
 	<h3>Other</h3>
 	<div ng-repeat='recipe in box.recipes'>
-		<p ng-if='recipe.category=="Other"'>{{recipe.name}}</p>	
+		<a ng-if='recipe.category=="Other"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Other"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
 	</div>
-	<button ng-click='addRecipe()' class='btn'>Add Recipes</button>
-	
 </div>

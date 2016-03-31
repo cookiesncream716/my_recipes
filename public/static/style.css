@@ -1,0 +1,46 @@
+.container{
+	background-color:#ccffff;
+	/*background-color: #9fdf9f;*/
+	/*background-color: #ff4d4d;*/
+	/*background-color: #ff5500;*/
+	/*background-color: #b3ff99;*/
+	padding-bottom: 30px;
+	min-height: 300px;
+	color: #004d4d;
+}
+#title{
+	/*color: #004d4d;*/
+	text-align: center;
+	font-size: 5em;
+	margin-bottom: 50px;
+}
+#recipe_box{
+	width: 7%;
+}
+/*#title_page_box{
+	width: 35%;
+}*/
+.food_pic1{
+	width: 20%;
+	margin-bottom: 25px;
+	margin-left: 9.5%;
+}
+.food_pic2{
+	width: 20%;
+	margin-bottom: 25px;
+	margin-left: 3.5%;
+}
+a{
+	color: #004d4d;
+}
+#a_title{
+	margin-left: 3.5%;
+	/*margin-bottom: 25px;*/
+}
+#title_dashboard{
+	margin-left: 72%;
+	/*color: #004d4d;*/
+}
+#d_recipe_card{
+	width: 13%;
+}
