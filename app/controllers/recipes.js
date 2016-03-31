@@ -26,6 +26,15 @@ module.exports = (function(){
 					}
 				})
 			})
+		},
+		delete: function(req, res){
+			Recipe.remove({_id: req.params.id}, function(err, results){
+				if(err){
+					console.log('did not delete', err)
+				} else{
+					res.json(results)
+				}
+			})
 		}
 	}
 })();

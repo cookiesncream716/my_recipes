@@ -14,5 +14,8 @@ module.exports = function(app){
 	});
 	app.post('/recipe', function(req, res){
 		recipes.create(req, res)
-	})
+	});
+	app.delete('/recipe/:id', function(req, res){
+		recipes.delete(req, res)
+	});
 }

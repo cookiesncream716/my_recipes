@@ -7,6 +7,11 @@ recipeBox.factory('recipeFactory', function($http){
 			// console.log(output)
 			callback(output);
 		})
+	};
+	factory.delete = function(id, callback){
+		$http.delete('/recipe/' + id).success(function(output){
+			callback();
+		})
 	}
 	return factory;
 })

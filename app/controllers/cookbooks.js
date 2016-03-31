@@ -28,17 +28,6 @@ module.exports = (function(){
 				}
 			})
 		},
-		// show: function(req, res){
-		// 	Cookbook.findOne({_id: req.params.id}, function(err, results){
-		// 		if(err){
-		// 			console.log('could not find recipe box');
-		// 			var error={error: "Error finding Recipe Box"};
-		// 			res.json(error);
-		// 		} else{
-		// 			res.json(results);
-		// 		}
-		// 	})
-		// },
 		show: function(req, res){
 			Cookbook.findOne({_id: req.params.id}).populate('recipes').exec(function(err, cookbook){
 				if(err){

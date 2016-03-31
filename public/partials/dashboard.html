@@ -1,10 +1,32 @@
-<div ng-controller='dashboardController' id='dashboard'>
-	<h2 id='title_dashboard'>myRecipe Box    <img src='/static/green_box.png' id='d_recipe_card'></h2>
-	<h3>The Recipe Boxes</h3>
-	<input ng-model='filter_boxes' placeholder='filter'>
-	<div ng-repeat="box in boxes | filter: filter_boxes | orderBy:'box'">
-		<h4 ng-click='showBox(box._id)'>{{ box.title }}</h4>
+<!-- <div ng-controller='titleController'> -->
+<div ng-controller='dashboardController'>
+	<h1 id='title'>myRecipe Box</h1>
+	<div class='row'>
+		<a href='http://allrecipes.com/recipe/7095/irresistible-irish-soda-bread/?internalSource=recipe%20hub&referringId=156&referringContentType=recipe%20hub' target='_blank'><img src='/static/bread_loaf.jpg' class='food_pic1'></a>
+		<a href='http://allrecipes.com/recipe/14544/marinated-grilled-chicken-ii/?internalSource=search%20result&referringContentType=search%20results' target='_blank'><img src='/static/chicken_potatoes.jpg' class='food_pic1'></a>
+		<!-- <img src='/static/hamburger.png' class='food_pic'> -->
+		<img src='/static/skillet.jpg' class='food_pic1'>
 	</div>
-	<button ng-click='addBox()' class='btn'>Create My Own Recipe Box</button>
-	
+	<div class='row'>
+		<a href='http://www.foodnetwork.com/grilling/grilling-central-burgers-and-hot-dogs/best-burger-recipes.html' target='_blank'><img src='/static/hamburgers.gif' class='food_pic2'></a>
+		<!-- <img src='/static/scallops.png' class='food_pic'> -->
+		<a href='http://www.foodnetwork.com/recipes/tyler-florence/tacos-carne-asada-recipe.html' target='_blank'><img src='/static/taco_plate.jpg' class='food_pic2'></a>
+		<a href='http://allrecipes.com/recipe/12720/grilled-salmon-i/' target='_blank'><img src='/static/salmon_veggies.jpg' class='food_pic2'></a>
+		<a href='http://allrecipes.com/recipe/70801/brick-oven-pizza-brooklyn-style/?internalSource=staff%20pick&referringId=250&referringContentType=recipe%20hub' target='_blank'><img src='/static/pizza.jpg' class='food_pic2'></a>
+	</div>
+	<!-- <a href='#/dashboard' id='a_title'>Click to Find Your Recipe Box</a> -->
+<!-- </div> -->
+<!-- <div ng-controller='dashboardController' id='dashboard'> -->
+	<!-- <h2 id='title_dashboard'>myRecipe Box    <img src='/static/green_box.png' id='d_recipe_card'></h2> -->
+	<div id='boxes'>
+		<h3>Recipe Boxes</h3>
+		<input ng-model='filter_boxes' placeholder='filter'>
+		<div ng-repeat="box in boxes | filter: filter_boxes | orderBy:'box'">
+			<a ng-click='showBox(box._id)' class='boxes'>{{ box.title }}</a>
+		</div>
+		<!-- <img src='/static/green_box.png' class='col-md-offset-4'> -->
+		<br>
+		<button ng-click='addBox()' class='btn'>Create My Own Recipe Box</button>
+	</div>
+		<img src='/static/green_box.png' class='col-md-offset-4' id='big_box'>
 </div>

@@ -1,11 +1,12 @@
-<div ng-controller='createController'>
+<div ng-controller='createController' class='partial'>
 	<form role='form'>
 		<div class='form-group'>
 			<label for='name'>Recipe Box Name:</label>
 			<input type='text' ng-model='newBox.title'>
 		</div>
-			<button ng-click='createBox()' class='btn btn-info'>Create</button>
+			<button ng-click='createBox()' class='btn'>Create</button>
 	</form>
 	<p>{{ errors }}</p>
-	<a href='#/dashboard'>Cancel - Return to Dashboard</a>
+	<a href='#/dashboard'>Cancel</a>
+	<h2 class='title_create'>myRecipe Box    <img src='/static/green_box.png' class='c_recipe_box'></h2>
 </div>

@@ -1,7 +1,8 @@
-<div ng-controller ='showController'>
-	<h1>show</h1>
-	<a href='#/dashboard'>Return to Dashboard</a> | <a  ng-click='addRecipe()'>Add Recipe</a>
-	<h1>{{ box.title }}</h1>
+<div ng-controller ='showController' class='partial'>
+	<div class='row' id='links'>
+		<a href='#/dashboard'>Return to Dashboard</a>&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp<a  ng-click='addRecipe()'>Add Recipe</a>
+	</div>
+	<h1 id='box_title'><img src='/static/chef.png' id='chef'>&nbsp&nbsp&nbsp{{ box.title }}</h1>
 	<h3>Bread</h3>
 	<div ng-repeat='recipe in box.recipes'>
 		<a ng-if='recipe.category=="Bread"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Bread"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>
@@ -28,10 +29,11 @@
 	</div>
 	<h3>Soup</h3>
 	<div ng-repeat='recipe in box.recipes'>
-		<a ng-if='recipe.category=="Soup"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Soup"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
+		<a ng-if='recipe.category=="Soup"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Soup"' ng-click='deleteRecipe(recipe._id)'>&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbspDelete Recipe</a>	
 	</div>
 	<h3>Other</h3>
 	<div ng-repeat='recipe in box.recipes'>
 		<a ng-if='recipe.category=="Other"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Other"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
 	</div>
+	<h2 class='title_create'>myRecipe Box    <img src='/static/green_box.png' class='c_recipe_box'></h2>
 </div>
