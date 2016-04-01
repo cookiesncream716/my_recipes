@@ -7,7 +7,8 @@ var RecipeSchema = new mongoose.Schema({
 	_cookbook: {type: Schema.Types.ObjectId, ref: 'Cookbook'},
 	name: {type: String, required: true},
 	url: {type: String, required: true},
-	category: {type: String, required: true}
+	category: {type: String, required: true},
+	rating: {type: Number, default: 0}
 });
 RecipeSchema.plugin(uniqueValidator);
 mongoose.model('Recipe', RecipeSchema);

@@ -8,10 +8,17 @@ recipeBox.factory('recipeFactory', function($http){
 			callback(output);
 		})
 	};
+	factory.update = function(id, rating, callback){
+		// console.log(id, rating)
+		info = {recipe_rating: rating}
+		$http.post('/recipe/'+ id, info).success(function(output){
+			callback();
+		})
+	}
 	factory.delete = function(id, callback){
 		$http.delete('/recipe/' + id).success(function(output){
 			callback();
 		})
-	}
+	};
 	return factory;
 })

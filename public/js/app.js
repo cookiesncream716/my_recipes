@@ -13,7 +13,7 @@ var recipeBox = angular.module('recipeBox', [
 recipeBox.config( function($routeProvider, $locationProvider){
 	$routeProvider
 		.when('/', {
-			templateUrl: 'partials/title.html',
+			templateUrl: 'partials/dashboard.html',
 			// controller: 'titleController'
 		})
 		.when('/dashboard', {

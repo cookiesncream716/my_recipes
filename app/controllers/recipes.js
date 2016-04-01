@@ -35,6 +35,18 @@ module.exports = (function(){
 					res.json(results)
 				}
 			})
+		},
+		update: function(req, res){
+			console.log(req.body.recipe_rating)
+			Recipe.update({_id: req.params.id}, {rating: req.body.recipe_rating}, function(err, results){
+				if(err){
+					console.log('error updating rating', err);
+					error = "Could not update rating"
+					res.json(error)
+				} else{
+					res.json(results)
+				}
+			})
 		}
 	}
 })();

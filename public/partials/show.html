@@ -3,37 +3,71 @@
 		<a href='#/dashboard'>Return to Dashboard</a>&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp<a  ng-click='addRecipe()'>Add Recipe</a>
 	</div>
 	<h1 id='box_title'><img src='/static/chef.png' id='chef'>&nbsp&nbsp&nbsp{{ box.title }}</h1>
-	<h3>Bread</h3>
-	<div ng-repeat='recipe in box.recipes'>
-		<a ng-if='recipe.category=="Bread"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Bread"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>
-	</div>
-	<h3>Beverage</h3>
-	<div ng-repeat='recipe in box.recipes'>
-		<a ng-if='recipe.category=="Beverage"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Beverage"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>
-	</div>
-	<h3>Dessert</h3>
-	<div ng-repeat='recipe in box.recipes'>
-		<a ng-if='recipe.category=="Dessert"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Dessert"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
-	</div>
-	<h3>Main Dish</h3>
-	<div ng-repeat='recipe in box.recipes'>
-		<a ng-if='recipe.category=="Main Dish"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Main Dish"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
-	</div>
-	<h3>Salad</h3>
-	<div ng-repeat='recipe in box.recipes'>
-		<a ng-if='recipe.category=="Salad"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Salad"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
-	</div>
-	<h3>Side Dish</h3>
-	<div ng-repeat='recipe in box.recipes'>
-		<a ng-if='recipe.category=="Side Dish"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Side Dish"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
-	</div>
-	<h3>Soup</h3>
-	<div ng-repeat='recipe in box.recipes'>
-		<a ng-if='recipe.category=="Soup"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Soup"' ng-click='deleteRecipe(recipe._id)'>&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbspDelete Recipe</a>	
-	</div>
-	<h3>Other</h3>
-	<div ng-repeat='recipe in box.recipes'>
-		<a ng-if='recipe.category=="Other"' href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a><a ng-if='recipe.category=="Other"' ng-click='deleteRecipe(recipe._id)'>  |  Delete Recipe</a>	
+	<div id='info'>
+		<h3><img src='/static/bread.jpg' class='icons'>&nbsp&nbspBread</h3>
+		<div ng-repeat='recipe in box.recipes'>
+			<ul ng-if='recipe.category=="Bread"'>
+				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
+				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
+			</ul>
+		</div>
+		<h3><img src='/static/coffee_cup.png' class='icons'>&nbsp&nbspBeverage</h3>
+		<div ng-repeat='recipe in box.recipes'>
+			<ul ng-if='recipe.category=="Beverage"'>
+				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
+				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
+			</ul>
+		</div>
+		<h3><img src='/static/cupcake.png' class='icon'>&nbsp&nbspDessert</h3>
+		<div ng-repeat='recipe in box.recipes'>
+			<ul ng-if='recipe.category=="Dessert"'>
+				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
+				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
+			</ul>
+		</div>
+		<h3><img src='/static/pizza_icon.png' class='icon'>&nbsp&nbspMain Dish</h3>
+		<div ng-repeat='recipe in box.recipes'>
+			<ul ng-if='recipe.category=="Main Dish"'>
+				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
+				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
+			</ul>
+		</div>
+		<h3><img src='/static/salad.gif' class='icon1'>&nbsp&nbspSalad</h3>
+		<div ng-repeat='recipe in box.recipes'>
+			<ul ng-if='recipe.category=="Salad"'>
+				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
+				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
+			</ul>
+		</div>
+		<h3><img src='/static/baked_potato.gif' class='icon1'>&nbsp&nbspSide Dish</h3>
+		<div ng-repeat='recipe in box.recipes'>
+			<ul ng-if='recipe.category=="Side Dish"'>
+				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
+				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
+			</ul>
+		</div>
+		<h3><img src='/static/soup.png' class='icons'>&nbsp&nbspSoup</h3>
+		<div ng-repeat='recipe in box.recipes'>
+			<ul ng-if='recipe.category=="Soup"'>
+				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
+				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
+			</ul>	
+		</div>
+		<h3><img src='/static/play_dough.png' class='icon1'>&nbsp&nbspOther</h3>
+		<div ng-repeat='recipe in box.recipes'>
+			<ul ng-if='recipe.category=="Other"'>
+				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
+				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
+			</ul>	
+		</div>
 	</div>
 	<h2 class='title_create'>myRecipe Box    <img src='/static/green_box.png' class='c_recipe_box'></h2>
 </div>

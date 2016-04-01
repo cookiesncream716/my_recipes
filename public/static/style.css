@@ -58,7 +58,9 @@ button{
 	color: #004d4d;
 }
 .partial{
-	padding: 40px;
+	padding-top: 40px;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 .c_recipe_box{
 	width: 8%;
@@ -68,12 +70,50 @@ button{
 	/*margin-left: 70%;*/
 	/*padding-top: 50px;*/
 }
+#info{
+	margin-left: 7%;
+}
 #chef{
 	width: 15%;
+}
+.icon{
+	width: 3%;
+}
+.icons{
+	width: 5%;
+}
+.icon1{
+	width: 4%;
 }
 #box_title{
 	font-size: 3em;
 }
 #links{
 	text-align: right;
+}
+#create_form{
+	width: 30%;
+}
+ul li{
+	display: inline;
+	margin-right: 2%;
+}
+#chef_update{
+	width: 12%;
+}
+#new_recipe{
+	width: 30%;
+	padding-top: 70px;
+	margin-right: 14%;
+}
+#new_recipe, #title_update{
+	display: inline-block;
+	vertical-align: bottom;
+}
+#title_update{
+	text-align: right;
+	/*border: 3px solid black;*/
+}
+#u_recipe_box{
+	width: 15%;
 }

@@ -5,7 +5,7 @@
 		<a href='http://allrecipes.com/recipe/7095/irresistible-irish-soda-bread/?internalSource=recipe%20hub&referringId=156&referringContentType=recipe%20hub' target='_blank'><img src='/static/bread_loaf.jpg' class='food_pic1'></a>
 		<a href='http://allrecipes.com/recipe/14544/marinated-grilled-chicken-ii/?internalSource=search%20result&referringContentType=search%20results' target='_blank'><img src='/static/chicken_potatoes.jpg' class='food_pic1'></a>
 		<!-- <img src='/static/hamburger.png' class='food_pic'> -->
-		<img src='/static/skillet.jpg' class='food_pic1'>
+		<a href='http://www.foodnetwork.com/recipes/rachael-ray/egg-pasta-frittata-recipe.html'><img src='/static/skillet.jpg' class='food_pic1'></a>
 	</div>
 	<div class='row'>
 		<a href='http://www.foodnetwork.com/grilling/grilling-central-burgers-and-hot-dogs/best-burger-recipes.html' target='_blank'><img src='/static/hamburgers.gif' class='food_pic2'></a>
@@ -19,7 +19,7 @@
 <!-- <div ng-controller='dashboardController' id='dashboard'> -->
 	<!-- <h2 id='title_dashboard'>myRecipe Box    <img src='/static/green_box.png' id='d_recipe_card'></h2> -->
 	<div id='boxes'>
-		<h3>Recipe Boxes</h3>
+		<!-- <h3>Recipe Boxes</h3> -->
 		<input ng-model='filter_boxes' placeholder='filter'>
 		<div ng-repeat="box in boxes | filter: filter_boxes | orderBy:'box'">
 			<a ng-click='showBox(box._id)' class='boxes'>{{ box.title }}</a>
