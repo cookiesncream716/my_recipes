@@ -21,4 +21,10 @@ module.exports = function(app){
 	app.delete('/recipe/:id', function(req, res){
 		recipes.delete(req, res)
 	});
+	app.post('/recipe/note/:id', function(req, res){
+		recipes.note(req, res)
+	});
+	app.post('/recipe/notes/:id', function(req, res){
+		recipes.update_notes(req, res)
+	});
 }

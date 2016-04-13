@@ -1,0 +1,8 @@
+<div ng-controller='noteController' class='partial'>
+	<div class='row' id='links'>
+	<a ng-click='showBox(box_title)'>Return to {{box_title}} </a>&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp<a  ng-click='addRecipe()'>Add Recipe</a>
+	</div>
+	<h3>{{recipe.name}}</h3>
+	<p>{{recipe.notes}}</p>
+	<h2 class='title_create'>myRecipe Box    <img src='/static/green_box.png' class='c_recipe_box'></h2>
+</div>

@@ -8,7 +8,8 @@ var RecipeSchema = new mongoose.Schema({
 	name: {type: String, required: true},
 	url: {type: String, required: true},
 	category: {type: String, required: true},
-	rating: {type: Number, default: 0}
+	rating: {type: Number, default: 0},
+	notes: {type: String, default: 'notes'}
 });
 RecipeSchema.plugin(uniqueValidator);
 mongoose.model('Recipe', RecipeSchema);

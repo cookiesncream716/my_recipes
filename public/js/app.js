@@ -32,6 +32,10 @@ recipeBox.config( function($routeProvider, $locationProvider){
 			templateUrl: '/partials/update.html',
 			// controller: 'updateController'
 		})
+		// .when('/note/:title/:id', {
+		// 	templateUrl: '/partials/notes.html'
+			// controller: 'noteController'
+		// })
 		.otherwise({
 			templateUrl: 'partials.title.html',
 			// controller: 'titleController'

@@ -9,64 +9,137 @@
 			<ul ng-if='recipe.category=="Bread"'>
 				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
 				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click="breadNotes(recipe.notes, recipe._id)">Notes</a></li>
+				<h4 ng-click='recipe.name(recipe.name)'>CLICK</h4>
 				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
 			</ul>
+		</div>
+		<div ng-show='bread_note'>
+			<form role='form'>
+				<textarea  ng-bind='note.note' ng-model='newNote[note.recipe_id].notes' class='form-control' ></textarea>
+				<br>
+				<button class='btn' ng-click='addNote(note.recipe_id)'>Add Note</button>
+				<button class='btn' ng-click='closeNote()'>Close Note</button>
+			</form>
 		</div>
 		<h3><img src='/static/coffee_cup.png' class='icons'>&nbsp&nbspBeverage</h3>
 		<div ng-repeat='recipe in box.recipes'>
 			<ul ng-if='recipe.category=="Beverage"'>
 				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
 				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='bevNotes(recipe.notes, recipe._id)'>Notes</a></li>
 				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
 			</ul>
+		</div>
+		<div ng-show='bev_note'>
+			<form role='form'>
+				<textarea ng-bind='beverage_note.note' ng-model='newNote[beverage_note.recipe_id].notes' class='form-control' ></textarea>
+				<br>
+				<button class='btn' ng-click='addNote(beverage_note.recipe_id)'>Add Note</button>
+				<button class='btn' ng-click='closeNote()'>Close Note</button>
+			</form>
 		</div>
 		<h3><img src='/static/cupcake.png' class='icon'>&nbsp&nbspDessert</h3>
 		<div ng-repeat='recipe in box.recipes'>
 			<ul ng-if='recipe.category=="Dessert"'>
 				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
 				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='dessertNotes(recipe.notes, recipe._id)'>Notes</a></li>
 				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
 			</ul>
+		</div>
+		<div ng-show='dessert_note'>
+			<form role='form'>
+				<textarea ng-bind='dess_note.note' ng-model='newNote[dess_note.recipe_id].notes' class='form-control' ></textarea>
+				<br>
+				<button class='btn' ng-click='addNote(dess_note.recipe_id)'>Add Note</button>
+				<button class='btn' ng-click='closeNote()'>Close Note</button>
+			</form>
 		</div>
 		<h3><img src='/static/pizza_icon.png' class='icon'>&nbsp&nbspMain Dish</h3>
 		<div ng-repeat='recipe in box.recipes'>
 			<ul ng-if='recipe.category=="Main Dish"'>
 				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
 				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='maindishNotes(recipe.notes, recipe._id)'>Notes</a></li>
 				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
 			</ul>
+		</div>
+		<div ng-show='maindish_note'>
+			<form role='form'>
+				<textarea ng-bind='main_note.note' ng-model='newNote[main_note.recipe_id].notes' class='form-control' ></textarea>
+				<br>
+				<button class='btn' ng-click='addNote(main_note.recipe_id)'>Add Note</button>
+				<button class='btn' ng-click='closeNote()'>Close Note</button>
+			</form>
 		</div>
 		<h3><img src='/static/salad.gif' class='icon1'>&nbsp&nbspSalad</h3>
 		<div ng-repeat='recipe in box.recipes'>
 			<ul ng-if='recipe.category=="Salad"'>
 				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
 				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='saladNotes(recipe.notes, recipe._id)'>Notes</a></li>
 				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
 			</ul>
+		</div>
+		<div ng-show='salad_note'>
+			<form role='form'>
+				<textarea ng-bind='salads_note.note' ng-model='newNote[salads_note.recipe_id].notes' class='form-control' ></textarea>
+				<br>
+				<button class='btn' ng-click='addNote(salads_note.recipe_id)'>Add Note</button>
+				<button class='btn' ng-click='closeNote()'>Close Note</button>
+			</form>
 		</div>
 		<h3><img src='/static/baked_potato.gif' class='icon1'>&nbsp&nbspSide Dish</h3>
 		<div ng-repeat='recipe in box.recipes'>
 			<ul ng-if='recipe.category=="Side Dish"'>
 				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
 				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='sideNotes(recipe.notes, recipe._id)'>Notes</a></li>
 				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
 			</ul>
+		</div>
+		<div ng-show='side_note'>
+			<form role='form'>
+				<textarea ng-bind='sides_note.note' ng-model='newNote[sides_note.recipe_id].notes' class='form-control' ></textarea>
+				<br>
+				<button class='btn' ng-click='addNote(sides_note.recipe_id)'>Add Note</button>
+				<button class='btn' ng-click='closeNote()'>Close Note</button>
+			</form>
 		</div>
 		<h3><img src='/static/soup.png' class='icons'>&nbsp&nbspSoup</h3>
 		<div ng-repeat='recipe in box.recipes'>
 			<ul ng-if='recipe.category=="Soup"'>
 				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
 				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='soupNotes(recipe.notes, recipe._id)'>Notes</a></li>
 				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
 			</ul>	
+		</div>
+		<div ng-show='soup_note'>
+			<form role='form'>
+				<textarea ng-bind='soups_note.note' ng-model='newNote[soups_note.recipe_id].notes' class='form-control' ></textarea>
+				<br>
+				<button class='btn' ng-click='addNote(soups_note.recipe_id)'>Add Note</button>
+				<button class='btn' ng-click='closeNote()'>Close Note</button>
+			</form>
 		</div>
 		<h3><img src='/static/play_dough.png' class='icon1'>&nbsp&nbspOther</h3>
 		<div ng-repeat='recipe in box.recipes'>
 			<ul ng-if='recipe.category=="Other"'>
 				<li><a href='{{recipe.url}}' target='_blank'>{{recipe.name}}</a></li>
 				<li ng-click='addRating(recipe._id, recipe.rating)'><uib-rating ng-model='recipe.rating' max='max' read-only='isReadOnly' on-hover='hoveringOver(value)'></uib-rating></li>
+				<li><a ng-click='otherNotes(recipe.notes, recipe._id)'>Notes</a></li>
 				<li><a ng-click='deleteRecipe(recipe._id)'>Delete Recipe</a></li>
 			</ul>	
+		</div>
+		<div ng-show='other_note'>
+			<form role='form'>
+				<textarea ng-bind='others_note.note' ng-model='newNote[others_note.recipe_id].notes' class='form-control' ></textarea>
+				<br>
+				<button class='btn' ng-click='addNote(others_note.recipe_id)'>Add Note</button>
+				<button class='btn' ng-click='closeNote()'>Close Note</button>
+			</form>
 		</div>
 	</div>
 	<h2 class='title_create'>myRecipe Box    <img src='/static/green_box.png' class='c_recipe_box'></h2>
