@@ -1,14 +1,14 @@
 recipeBox.controller('showController', function($scope, $routeParams, $location, cookbookFactory, recipeFactory){
 	var box_id = $routeParams.id;
 	// console.log(box_id)
-	// $scope.bread_note = false;
-	// $scope.bev_note = false;
-	// $scope.dessert_note = false;
-	// $scope.maindish_note = false;
-	// $scope.salad_note = false;
-	// $scope.side_note = false;
-	// $scope.soup_note = false;
-	// $scope.other_note = false;
+	// $scope.Bread_note = false;
+	// $scope.Beverage_note = false;
+	$scope.dessert_note = false;
+	$scope.maindish_note = false;
+	$scope.salad_note = false;
+	$scope.side_note = false;
+	$scope.soup_note = false;
+	$scope.other_note = false;
 	cookbookFactory.show(box_id, function(data){
 		$scope.box = data;
 		// console.log($scope.box);
@@ -29,15 +29,11 @@ recipeBox.controller('showController', function($scope, $routeParams, $location,
 	$scope.addRecipe = function(){
 		$location.path('/update/' + box_id);
 	}
-	$scope.breadNotes = function(notes, id){
-		$scope.note ={note: notes, recipe_id: id}
-		// console.log($scope.note)
-		$scope.bread_note = true
-	}
-	$scope.bevNotes = function(notes, id){
-		$scope.beverage_note = {note: notes, recipe_id: id}
-		$scope.bev_note = true
-	}
+	// $scope.breadNotes = function(notes, id){
+	// 	$scope.note ={note: notes, recipe_id: id}
+	// 	console.log($scope.note)
+	// 	$scope.bread_note = true
+	// }
 	$scope.dessertNotes = function(notes, id){
 		$scope.dess_note = {note: notes, recipe_id: id}
 		$scope.dessert_note = true
@@ -62,9 +58,14 @@ recipeBox.controller('showController', function($scope, $routeParams, $location,
 		$scope.others_note = {note: notes, recipe_id: id}
 		// console.log($scope.others_note)
 		$scope.other_note = true
+		console.log($scope.other_note)
 	}
-	$scope.name = function(name){
-		console.log(name)
+	$scope.showNotes = function(name, notes, id){
+		console.log(name, notes, id)
+		$scope.note ={note: notes, recipe_id: id}
+		var category = name + '_note'
+		console.log(category)
+		$scope[category] = true
 	}
 	$scope.addNote = function(recipe_id){
 		console.log($scope.newNote, $scope.newNote[recipe_id].notes)
@@ -79,8 +80,8 @@ recipeBox.controller('showController', function($scope, $routeParams, $location,
 	$scope.closeNote = function(){
 		// console.log(note)
 		$scope.note = false
-		$scope.bread_note = false;
-		$scope.bev_note = false;
+		$scope.Bread_note = false;
+		$scope.Beverage_note = false;
 		$scope.dessert_note = false;
 		$scope.maindish_note = false;
 		$scope.salad_note = false;
