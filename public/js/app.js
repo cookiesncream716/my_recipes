@@ -1,13 +1,6 @@
 var recipeBox = angular.module('recipeBox', [
 	'ngRoute',
 	'ui.bootstrap'
-	//  'appRoutes',
-	// 'createController',
-	// 'dashboardController',
-	// 'showController',
-	// 'titleController'
-	// 'updateController',
-	// 'cookbookFactory'
 ])
 
 recipeBox.config( function($routeProvider, $locationProvider){
