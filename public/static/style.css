@@ -1,13 +1,18 @@
-.container{
+/*.container{*/
 	/*width: 100%;*/
-	background-color:#ccffff;
+	/*background-color:#ccffff;*/
 	/*background-color: #9fdf9f;*/
 	/*background-color: #ff4d4d;*/
 	/*background-color: #ff5500;*/
 	/*background-color: #b3ff99;*/
-	padding-bottom: 30px;
-	min-height: 300px;
+	/*padding-bottom: 30px;*/
+	/*min-height: 300px;*/
+	/*color: #004d4d;*/
+/*}*/
+body{
+	background-color:#ccffff;
 	color: #004d4d;
+	padding-bottom: 30px;
 }
 #title{
 	/*color: #004d4d;*/
