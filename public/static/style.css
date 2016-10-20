@@ -71,10 +71,14 @@ button{
 .c_recipe_box{
 	width: 8%;
 }
+.title_show{
+	text-align: right;
+}
 .title_create{
 	text-align: right;
 	/*margin-left: 70%;*/
 	/*padding-top: 50px;*/
+	margin-top: 30%;
 }
 #info{
 	margin-left: 7%;
@@ -94,7 +98,7 @@ button{
 #box_title{
 	font-size: 3em;
 }
-#links{
+.links{
 	text-align: right;
 }
 #create_form{

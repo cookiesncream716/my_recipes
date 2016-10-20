@@ -1,4 +1,7 @@
 <div ng-controller ='updateController' class='partial'>
+	<div class='row, links'>
+		<a href='#/show/{{ box._id }}'>Return to {{ box.title }}</a>
+	</div>
 	<h1><img src='/static/chef.png' id='chef_update'>&nbsp&nbsp&nbsp{{ box.title }}</h1>
 	<div id='new_recipe'>
 		<form role='form'>
@@ -26,7 +29,7 @@
 			<input type='hidden' ng-value='addRecipe.cookbook_id = box._id'>
 			<button ng-click='createRecipe()' class='btn'>Add Recipe</button>
 		</form>
-		<a href='#/show/{{ box._id }}'>Return to {{ box.title }}</a>
+		<!-- <a href='#/show/{{ box._id }}'>Return to {{ box.title }}</a> -->
 		<h4>{{ errors }}</h4>
 	</div>
 	<div id='title_update'>
